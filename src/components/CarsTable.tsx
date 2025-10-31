@@ -299,7 +299,23 @@ const CarsTable = () => {
                                                 spellCheck: 'false',
                                                 tabIndex: 0,
                                             }}
-                                            className={styles.tableCellInput}
+                                            sx={{
+                                                width: '100%',
+                                                '& input[type=number]': {
+                                                    MozAppearance: 'textfield',
+                                                    appearance: 'textfield',
+                                                },
+                                                '& input[type=number]::-webkit-outer-spin-button': {
+                                                    WebkitAppearance: 'none',
+                                                    appearance: 'none',
+                                                    margin: 0,
+                                                },
+                                                '& input[type=number]::-webkit-inner-spin-button': {
+                                                    WebkitAppearance: 'none',
+                                                    appearance: 'none',
+                                                    margin: 0,
+                                                },
+                                            }}
                                         />
                                     ) : (
                                         formatPrice(car.price)
