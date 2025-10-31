@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# Car Viewer SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SPA-приложение для просмотра, создания, редактирования и удаления автомобилей с интеграцией карт.
 
-Currently, two official plugins are available:
+## 🚀 Технологический стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Основные технологии
+- **React 19** - UI библиотека для построения пользовательского интерфейса
+- **TypeScript** - типизированный JavaScript для повышения надежности кода
+- **Vite** - современный сборщик и dev-сервер для быстрой разработки
 
-## React Compiler
+### UI библиотеки
+- **Material UI (MUI)** - компонентная библиотека для создания современного интерфейса
+  - `@mui/material` - основные компоненты (таблицы, формы, кнопки и т.д.)
+  - `@mui/icons-material` - иконки
+  - `@emotion/react` и `@emotion/styled` - стилизация компонентов (peer dependencies для MUI)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Управление состоянием
+- **Zustand** - легковесная библиотека для управления глобальным состоянием приложения
 
-## Expanding the ESLint configuration
+### Роутинг
+- **React Router DOM** - маршрутизация для навигации между страницами (список машин и карта)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### HTTP запросы
+- **Axios** - библиотека для выполнения HTTP запросов к REST API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Карты
+- **Leaflet** - библиотека для отображения интерактивных карт
+- **React-Leaflet** - React-обертка для Leaflet
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Стили
+- **Sass** - препроцессор CSS для модульных стилей
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Установка и запуск
+
+### Предварительные требования
+- Node.js (версия 20.19.0 или выше)
+- npm или yarn
+
+### Установка зависимостей
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Запуск проекта в режиме разработки
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Приложение будет доступно по адресу `http://localhost:5173`
+
+### Сборка для продакшена
+
+```bash
+npm run build
+```
+
+Собранные файлы будут находиться в папке `dist`
+
+### Просмотр продакшн сборки
+
+```bash
+npm run preview
+```
+
+### Линтинг
+
+```bash
+npm run lint
+```
+
+## 🎯 Основной функционал
+
+- ✅ Просмотр списка машин (марка, модель, год, цена)
+- ✅ Создание новой машины (с валидацией полей)
+- ✅ Редактирование машин (поля: марка и цена)
+- ✅ Удаление машин
+- ✅ Сортировка по году выпуска и цене
+- ✅ Просмотр местоположения машины на карте
+
+## 📡 API
+
+Приложение использует REST API:
+- **Endpoint**: `https://ofc-test-01.tspb.su/test-task/vehicles`
+- **Метод**: GET
+
+## 📁 Структура проекта
+
+```
+src/
+├── api/              # API клиент для работы с сервером
+├── components/       # React компоненты
+│   ├── CarsTable.tsx          # Таблица со списком машин
+│   ├── CreateCarComponent.tsx # Форма создания машины
+│   └── CarLocationOnMap.tsx   # Компонент карты
+├── store/            # Zustand store для управления состоянием
+├── types/            # TypeScript типы и интерфейсы
+├── App.tsx           # Главный компонент приложения
+└── main.tsx          # Точка входа приложения
+```
+
+## 🛠 Разработка
+
+Проект использует:
+- **Vite** для быстрой сборки и hot module replacement (HMR)
+- **TypeScript** для типобезопасности
+- **ESLint** для проверки качества кода
+- **Material UI** для готовых компонентов интерфейса
