@@ -177,7 +177,15 @@ const CarsTable = () => {
 
     if (loading) {
         return (
-            <Box className={styles.loadingContainer}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '200px',
+                    width: '100%',
+                }}
+            >
                 <CircularProgress />
             </Box>
         );
