@@ -1,0 +1,29 @@
+// Стили для компонента CarsTable
+.table-container {
+  margin-top: 24px;
+}
+
+.table {
+  min-width: 650px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error-alert {
+  margin-top: 16px;
+}
+
+.table-cell-input {
+  width: 100%;
+  
+  :global(.MuiOutlinedInput-root) {
+    width: 100%;
+  }
+}
+
+

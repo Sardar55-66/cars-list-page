@@ -1,0 +1,46 @@
+// Стили для компонента CreateCarComponent
+.form-container {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-table-container {
+  margin-top: 16px;
+}
+
+.form-table {
+  min-width: 650px;
+}
+
+.number-input {
+  width: 100%;
+
+  :global(.MuiOutlinedInput-root) {
+    width: 100%;
+  }
+
+  :global(input[type='number']) {
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.text-input {
+  width: 100%;
+
+  :global(.MuiOutlinedInput-root) {
+    width: 100%;
+  }
+}
+
+.actions-container {
+  display: flex;
+  gap: 8px;
+}

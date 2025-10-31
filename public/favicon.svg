@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Красная спортивная машина -->
+  <rect x="15" y="45" width="70" height="35" rx="5" fill="#dc2626"/>
+  <rect x="15" y="50" width="70" height="5" fill="#991b1b"/>
+  <!-- Окна -->
+  <rect x="25" y="35" width="20" height="15" rx="2" fill="#1f2937"/>
+  <rect x="50" y="35" width="20" height="15" rx="2" fill="#1f2937"/>
+  <!-- Колеса -->
+  <circle cx="28" cy="80" r="8" fill="#111827"/>
+  <circle cx="28" cy="80" r="5" fill="#374151"/>
+  <circle cx="72" cy="80" r="8" fill="#111827"/>
+  <circle cx="72" cy="80" r="5" fill="#374151"/>
+  <!-- Фары -->
+  <ellipse cx="15" cy="55" rx="3" ry="5" fill="#fbbf24"/>
+  <!-- Спойлер -->
+  <rect x="80" y="40" width="5" height="10" fill="#991b1b"/>
+</svg>
+
